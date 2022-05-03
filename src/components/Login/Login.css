@@ -1,0 +1,196 @@
+.wrapper {
+    background: url(https://img.freepik.com/free-photo/blurred-interior-hospital-clinical-with-people-abstract-medical-background_1484-1309.jpg) no-repeat center center fixed; 
+    background-size: 100%;
+    height: 100vh;
+    width: 100;
+}
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@200&display=swap');
+img{
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+
+#login-button{
+    cursor: pointer;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(3,3,3,.8);
+    overflow: hidden;
+    opacity: 0.4;
+    box-shadow: 10px 10px 30px #000;
+}
+  
+#login-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 260px;
+    height: max-content;
+    border-radius: 5px;
+    background: rgba(3,3,3,0.25);
+    box-shadow: 1px 1px 50px #000;
+    display: none;
+    
+}
+
+.close-btn{
+    position: absolute;
+    cursor: pointer;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    line-height: 18px;
+    top: 3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 10px;
+    opacity: .2;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.close-btn:hover{
+    opacity: .5;
+}
+
+h1{
+    font-family: 'Encode Sans Condensed', sans-serif;
+    position: relative;
+    margin-top: 0px;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    text-shadow: 3px 3px 10px #000;
+}
+
+.style-button,
+input{
+    font-family: 'Encode Sans Condensed', sans-serif;
+  text-decoration: none;
+  position: relative;
+  width: 80%;
+  display: block;
+  margin: 9px auto;
+  font-size: 17px;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background: rgba(3,3,3,.1);
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus{
+  outline: none;
+  box-shadow: 3px 3px 10px #333;
+  background: rgba(3,3,3,.18);
+}
+
+
+.style-button{
+    font-family: 'Encode Sans Condensed', sans-serif;
+    text-align: center;
+    padding: 4px 8px;
+    cursor: pointer;
+    background: rgb(5, 218, 69);
+}
+
+.style-button:hover{
+    opacity: 0.7;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+  }
+#remember-container{
+    position: relative;
+    display: flex;
+    margin: -5px 20px;
+}
+
+.checkbox {
+    cursor: pointer;
+    -webkit-appearance: none;
+    padding: 5px;
+    margin-left: -4px;
+    border-radius: 4px;
+    background: rgba(3,3,3,.2);
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+}
+
+.checkbox:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+.checkbox:checked {
+background: rgba(3,3,3,.4);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.5);
+    color: #fff;
+}
+  
+.checkbox:checked:after {
+    content: '\2714';
+    font-size: 10px;
+    position: absolute;
+    top: 0px;
+    left: 4px;
+    color: #fff;
+}
+
+#remember{
+    font-size: 14px;
+    margin-top: 8px;
+    margin-right: 120px;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    color: white;
+    top: 7px;
+    left: 20px;
+}
+
+.error {
+    font-size: 14px;
+    color: red;
+    font-style: italic;
+    text-align: left;
+    margin-left: 22px;
+}
+
+.toggle-eye {
+    cursor: pointer;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: 216px;
+}
+
+.toggle-eye:hover {
+    color: rgb(5, 218, 69);
+}
+  
