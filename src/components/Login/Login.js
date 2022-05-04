@@ -97,8 +97,10 @@ export default function Login() {
                     <button className='style-button' type='submit'>Login</button>
 
                     <div id='remember-container'>
-                        <input type="checkbox" id='checkbox-2-1' className='checkbox' />
-                        <span id='remember'>Remember me</span>
+                        <div>
+                            <input type="checkbox"/>
+                        </div>
+                        <div id='remember'>Remember me</div>
                     </div>
 
                 </form>
