@@ -28,7 +28,8 @@ img{
     background: rgba(3,3,3,.8);
     overflow: hidden;
     opacity: 0.4;
-    box-shadow: 10px 10px 30px #000;
+    box-shadow: 10px 10px 30px #000;    
+    transition: 0.5s;
 }
   
 #login-wrapper{
@@ -43,8 +44,8 @@ img{
     border-radius: 5px;
     background: rgba(3,3,3,0.25);
     box-shadow: 1px 1px 50px #000;
-    display: none;
-    
+    transition: 0.5s;
+    opacity: 0;
 }
 
 .close-btn{
@@ -182,6 +183,7 @@ background: rgba(3,3,3,.4);
     text-align: left;
     margin-left: 22px;
 }
+
 
 .toggle-eye {
     cursor: pointer;

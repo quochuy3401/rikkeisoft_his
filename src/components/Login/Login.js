@@ -53,11 +53,11 @@ export default function Login() {
 
     return (
         <div className='container wrapper'>
-            <div id="login-button" onClick={toggleModal} style={{display: isOpen ? 'none' : 'block'}}>
+            <div id="login-button" onClick={toggleModal} style={{opacity: isOpen ? '0' : '0.4', zIndex: isOpen? '-1' : '100'}}>
                 <img src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png" alt="" />
             </div>
-
-            <div id='login-wrapper' style={{display: isOpen ? 'block' : 'none'}}>
+        
+            <div id='login-wrapper' style={{opacity: isOpen ? '1' : '0'}}>
                 <br/>   
                 <h1>Login</h1>
                 <span className='close-btn' onClick={closeModal} style={{zIndex: '1000'}}>
@@ -71,8 +71,9 @@ export default function Login() {
                         name='username' 
                         placeholder='Username' 
                         onChange={formik.handleChange} 
+                        onBlur={formik.handleBlur}
                         value={formik.values.username} />
-                        {formik.errors.username ? <div className='error'>{formik.errors.username}</div> : null}
+                        {formik.errors.username && formik.touched.username ? <div className='error'>{formik.errors.username}</div> : null}
                     </div>
                     <div className='form-control'>
                         <input 
@@ -80,13 +81,14 @@ export default function Login() {
                         name='password' 
                         placeholder='Password' 
                         onChange={formik.handleChange} 
+                        onBlur={formik.handleBlur}
                         value={formik.values.password} />
                         
                         <div className='toggle-eye' onClick={togglePassword}>
                             {!passwordShown ? <FontAwesomeIcon icon={faEye} /> : <FontAwesomeIcon icon={faEyeSlash} />}
                         </div>
 
-                        {formik.errors.password ? <div className='error'>{formik.errors.password}</div> : null}
+                        {formik.errors.password && formik.touched.password ? <div className='error'>{formik.errors.password}</div> : null}
 
                     </div>
 
