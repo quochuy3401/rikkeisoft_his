@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-// import Login from './components/Login/Login'
+import Login from './components/Login/Login'
 import { PatientForm } from './components/Patient/PatientForm';
 function App() {
   return (
@@ -10,8 +10,10 @@ function App() {
       {/* DM HIEU PC
       <Login /> */}
       <Routes>
-        <Route path="/" element={<PatientForm />}/>
+        <Route path="/patient" element={<PatientForm />}/>
+        <Route path="/" element={ <Login />}/>
       </Routes>
+      
     </div>
   );
 }
