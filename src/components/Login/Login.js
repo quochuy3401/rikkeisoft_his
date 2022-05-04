@@ -53,7 +53,7 @@ export default function Login() {
     }
 
     return (
-        <div className='container wrapper'>
+        <div className=' wrapper'>
             <div id="login-button" onClick={toggleModal} style={{opacity: isOpen ? '0' : '0.4', zIndex: isOpen? '-1' : '100'}}>
                 <img src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png" alt="" />
             </div>
@@ -66,7 +66,7 @@ export default function Login() {
                 </span>
 
                 <form onSubmit={formik.handleSubmit} style={{marginBottom: '24px', marginTop: '10px'}}>
-                    <div className='form-control'>
+                    <div className='form--control'>
                         <input 
                         type="text" 
                         name='username' 
@@ -76,7 +76,7 @@ export default function Login() {
                         value={formik.values.username} />
                         {formik.errors.username && formik.touched.username ? <div className='error'>{formik.errors.username}</div> : null}
                     </div>
-                    <div className='form-control'>
+                    <div className='form--control'>
                         <input 
                         type={passwordShown ? 'text' : 'password'} 
                         name='password' 
