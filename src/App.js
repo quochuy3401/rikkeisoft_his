@@ -14,18 +14,10 @@ function App() {
       {/* DM HIEU PC
       <Login /> */}
       <Routes>
-<<<<<<< HEAD
         <Route path="/login" element={ <Login />}/>
         <Route path="/" element={<Dashboard />}> 
           <Route index element={<PatientForm />}/>
         </Route>
-=======
-        <Route path="/home" element={<Dashboard />}/>
-        <Route path="/patient" element={<PatientForm />}/>
-        <Route path="/" element={ <Login />}/>
-        <Route path='/loading' element={ <LoadingScreen /> } />
-        <Route path='/sloading' element={ <SimpleLoading /> } />
->>>>>>> 3a7f3b0b8d2d861abbe296dd0ec3f8c08789b58b
       </Routes>
       
     </div>
