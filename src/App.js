@@ -11,9 +11,10 @@ function App() {
       {/* DM HIEU PC
       <Login /> */}
       <Routes>
-        <Route path="/home" element={<Dashboard />}/>
-        <Route path="/patient" element={<PatientForm />}/>
-        <Route path="/" element={ <Login />}/>
+        <Route path="/login" element={ <Login />}/>
+        <Route path="/" element={<Dashboard />}> 
+          <Route index element={<PatientForm />}/>
+        </Route>
       </Routes>
       
     </div>
