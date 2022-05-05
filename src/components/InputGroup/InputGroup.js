@@ -2,7 +2,7 @@ import { Col, Row } from "react-bootstrap";
 import "./InputGroup.css";
 
 export const InputGroup = (props) => {
-  const { label, id, name } = props;
+  const { label, id, name, disabled } = props;
   return (
     <>
       <div className="input-wrapper d-flex">
@@ -10,7 +10,7 @@ export const InputGroup = (props) => {
           <label>{label}</label>
         </div>
         <div>
-          <input type="text" id={id} name={name} />
+          <input type="text" id={id} name={name} disabled={disabled || false} />
         </div>
       </div>
     </>
