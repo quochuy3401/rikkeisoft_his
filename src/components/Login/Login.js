@@ -45,7 +45,6 @@ export default function Login() {
 
     function closeModal() {
         setIsOpen(false)   
-        formik.setErrors({})
     }
 
     function togglePassword() {

@@ -4,7 +4,7 @@ import "./PatientForm.css";
 
 export const PatientForm = () => {
   return (
-    <Container>
+    <Container fluid>
       <Row style={{ marginTop: "70px" }}>
         {/* left-side */}
         <Col xl={8}>
