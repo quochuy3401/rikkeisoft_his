@@ -1,8 +1,10 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { InputGroup } from "../InputGroup/InputGroup";
 import "./PatientForm.css";
+import {initialValues} from "../../formControl/patientForm.ts";
 
 export const PatientForm = () => {
+  console.log(initialValues);
   return (
     <Container fluid>
       <Row style={{ marginTop: "70px" }}>
@@ -107,7 +109,7 @@ export const PatientForm = () => {
         {/* right-side */}
         <Col xl={4}>
           <div className="right-side block shadow-fb">
-              <div className="category-title">Thông tin các phòng khám</div>
+            <div className="category-title">Thông tin các phòng khám</div>
           </div>
         </Col>
       </Row>

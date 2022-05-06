@@ -10,6 +10,7 @@
     border: none;
     border-bottom: 1px solid #d3d3d3;
     width: 100%;
+    padding: 0px 5px;
 }
 .input-wrapper label{
     width:110px;

@@ -13,13 +13,13 @@ export default function Dashboard(){
     <div className="dashboard">
       <div className="header">
         <div className="menu">
-          <label for="navbar" >
+          <label htmlFor="navbar" >
             <MenuIcon className="menu-icon" />
           </label>
         </div>
-        <div className="name-hospital">
+        {/* <div className="name-hospital">
           <h1>Hospital</h1>
-        </div>
+        </div> */}
         
         <div className="account-container">
           <AccountCircleIcon className="account-icon"/>
@@ -27,7 +27,7 @@ export default function Dashboard(){
       </div>
       <input className="menu-checkbox" type="checkbox" id="navbar" >
       </input>
-      <label for="navbar" className="nav-overlay"></label>
+      <label htmlFor="navbar" className="nav-overlay"></label>
 
       <div className="navbar">
         <ListItemButton className="nav-button">
