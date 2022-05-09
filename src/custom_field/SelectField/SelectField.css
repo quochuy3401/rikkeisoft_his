@@ -1,0 +1,29 @@
+.select-wrapper {
+    margin-bottom: 5px;
+}
+
+.select-wrapper select {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #d3d3d3;
+    width: 100%;
+    padding: 0px 5px;
+}
+
+.select-wrapper label {
+    width: 110px;
+}
+
+.error {
+    border-bottom: 1px solid #D8000C;
+}
+
+.select-wrapper .select-input>div{
+    border-style: none;
+    border-bottom: 1px solid #d3d3d3;
+    border-radius: none;
+    
+}
+.select-wrapper .select-input{
+    width: 100%;
+}

@@ -1,108 +1,232 @@
+import { Formik, Form, Field, FastField } from "formik";
 import { Col, Container, Row } from "react-bootstrap";
-import { InputGroup } from "../InputGroup/InputGroup";
+import { TextField } from "../../custom_field/TextField/TextField";
 import "./PatientForm.css";
-import {initialValues} from "../../formControl/patientForm.ts";
+import { initialValues, patientSchema } from "../../formControl/patientForm.ts";
+import { SelectField } from "../../custom_field/SelectField/SelectField";
 
 export const PatientForm = () => {
-  console.log(initialValues);
+    const fakeOptions = [
+    { value: 1, label: "Hanoi" },
+    { value: 2, label: "TPHCM" },
+    { value: 3, label: "HaiPhong" },
+  ];
+  const relationship =[
+    {value: "Bố", label: "Bố"},
+    {value: "Mẹ", label: "Mẹ"},
+    {value: "Anh trai", label: "Anh trai"},
+  ]
   return (
     <Container fluid>
       <Row style={{ marginTop: "70px" }}>
         {/* left-side */}
         <Col xl={8}>
           <div className="left-side">
-            {/* hồ  sơ*/}
-            <form>
-              <div className="block shadow-fb">
-                <div className="category-title">Hồ sơ</div>
-                <Row>
-                  <Col xl={3}>
-                    <InputGroup id="" name="" label="Mã BN" />
-                  </Col>
-                  <Col xl={3}>
-                    <InputGroup id="" name="" label="Số HS" />
-                  </Col>
-                  <Col xl={6}>
-                    <InputGroup id="" name="" label="Thẻ" />
-                  </Col>
-                  <Col xl={6}>
-                    <InputGroup id="" name="" label="Tên bệnh nhân" />
-                  </Col>
-                  <Col xl={6}>
-                    <InputGroup id="" name="" label="Tuổi" />
-                  </Col>
-                  <Col xl={3}>
-                    <InputGroup id="" name="" label="Giới tính" />
-                  </Col>
-                  <Col xl={3}>
-                    <InputGroup id="" name="" label="Dân tộc" />
-                  </Col>
-                  <Col xl={6}>
-                    <InputGroup id="" name="" label="SĐT" />
-                  </Col>
-                  <Col xl={12}>
-                    <InputGroup id="" name="" label="Địa chỉ" />
-                  </Col>
-                  <Col xl={12}>
-                    <InputGroup id="" name="" label="Địa chỉ chi tiết" />
-                  </Col>
-                  <Col xl={6}>
-                    <InputGroup id="" name="" label="Người thân" />
-                  </Col>
-                  <Col xl={6}>
-                    <InputGroup id="" name="" label="Quan hệ" />
-                  </Col>
-                  <Col xl={12}>
-                    <InputGroup id="" name="" label="Địa chỉ liên hệ" />
-                  </Col>
-                </Row>
-              </div>
-              {/* đối tượng bệnh nhân */}
-              <div className="block shadow-fb">
-                <div className="category-title">Tiếp nhận hồ sơ</div>
-                <Row>
-                  <Col xl={6}>
-                    <InputGroup id="" name="" label="Đối tượng" />
-                  </Col>
-                  <Col xl={6}>
-                    <InputGroup id="" name="" label="Số thẻ" />
-                  </Col>
-                </Row>
-              </div>
-              {/* thông tin khám */}
-              <div className="block shadow-fb">
-                <div className="category-title">Thông tin khám</div>
-                <Row>
-                  <Col xl={6}>
-                    <InputGroup id="" name="" label="Tình trạng BN" />
-                  </Col>
-                  <Col xl={3}>
-                    <InputGroup id="" name="" label="Ngày" />
-                  </Col>
-                  <Col xl={3}>
-                    <InputGroup id="" name="" label="Số phiếu" />
-                  </Col>
-                  <Col xl={6}>
-                    <InputGroup id="" name="" label="Kiểu khám" />
-                  </Col>
-                  <Col xl={6}>
-                    <InputGroup id="" name="" label="Phòng" />
-                  </Col>
-                </Row>
-              </div>
-              {/* thông tin chuyển tuyến */}
-              <div className="block shadow-fb">
-                <div className="category-title">Thông tin chuyển tuyến</div>
-                <Row>
-                  <Col xl={12}>
-                    <InputGroup id="" name="" label="Bệnh viện" />
-                  </Col>
-                  <Col xl={12}>
-                    <InputGroup id="" name="" label="Bệnh" />
-                  </Col>
-                </Row>
-              </div>
-            </form>
+            <Formik
+              initialValues={initialValues}
+              validationSchema={patientSchema}
+              onSubmit={(values) => {
+                console.log(values);
+              }}
+            >
+              {(formikProps) => {
+                const values = {formikProps}
+                console.log(values);
+                return (
+                  <Form>
+                    {/* hồ  sơ*/}
+                    <div className="block shadow-fb">
+                      <div className="category-title">Hồ sơ</div>
+                      <Row>
+                        <Col xl={3}>
+                          <Field
+                            name="patientId"
+                            label="Mã BN"
+                            component={TextField}
+                            // error={errors.patientID}
+                            // touched={touched.patientId}
+                          />
+                        </Col>
+                        <Col xl={3}>
+                          <Field
+                            name="recordId"
+                            label="Số HS"
+                            component={TextField}
+                          />
+                        </Col>
+                        <Col xl={6}>
+                          <Field
+                            name="insuranceCode"
+                            label="Thẻ"
+                            component={TextField}
+                          />
+                        </Col>
+                        <Col xl={6}>
+                          <Field
+                            name="name"
+                            label="Tên bệnh nhân"
+                            component={TextField}
+                          />
+                        </Col>
+                        <Col xl={6}>
+                          <Field
+                            name="age"
+                            label="Tuổi"
+                            component={TextField}
+                          />
+                        </Col>
+                        <Col xl={3}>
+                          <Field
+                            name="gender"
+                            label="Giới tính"
+                            component={TextField}
+                          />
+                        </Col>
+                        <Col xl={3}>
+                          <Field
+                            name="ethnic"
+                            label="Dân tộc"
+                            component={TextField}
+                          />
+                        </Col>
+                        <Col xl={6}>
+                          <FastField
+                            name="phoneNumber"
+                            label="SĐT"
+                            component={TextField}
+                          />
+                        </Col>
+                        <Col xl={12}>
+                          <Field
+                            name="addressId"
+                            label="Địa chỉ"
+                            component={SelectField}
+                            options={fakeOptions}
+                          />
+                        </Col>
+                        <Col xl={12}>
+                          <Field
+                            name="detailAddress"
+                            label="Địa chỉ chi tiết"
+                            component={TextField}
+                          />
+                        </Col>
+                        <Col xl={6}>
+                          <FastField
+                            name="relative"
+                            label="Người thân"
+                            component={TextField}
+                          />
+                        </Col>
+                        <Col xl={6}>
+                          <FastField
+                            name="relationship"
+                            label="Quan hệ"
+                            component={SelectField}
+                            options={relationship}
+                          />
+                        </Col>
+                        <Col xl={12}>
+                          <FastField
+                            name="addrRelative"
+                            label="Địa chỉ liên hệ"
+                            component={TextField}
+                          />
+                        </Col>
+                      </Row>
+                    </div>
+                    {/* đối tượng bệnh nhân */}
+                    <div className="block shadow-fb">
+                      <div className="category-title">Tiếp nhận hồ sơ</div>
+                      <Row>
+                        <Col xl={6}>
+                          <Field
+                            name="doiTuong"
+                            label="Đối tượng"
+                            component={TextField}
+                          />
+                        </Col>
+                        <Col xl={6}>
+                          <Field
+                            name="insuranceCode"
+                            label="Số thẻ"
+                            component={TextField}
+                          />
+                        </Col>
+                      </Row>
+                    </div>
+                    {/* thông tin khám */}
+                    <div className="block shadow-fb">
+                      <div className="category-title">Thông tin khám</div>
+                      <Row>
+                        <Col xl={6}>
+                          <Field
+                            name="patientStatus"
+                            label="Tình trạng bệnh nhân"
+                            component={TextField}
+                          />
+                        </Col>
+                        <Col xl={3}>
+                          <FastField
+                            name="date"
+                            label="Ngày"
+                            component={TextField}
+                            disabled="true"
+                          />
+                        </Col>
+                        <Col xl={3}>
+                          <Field
+                            name="numberOrder"
+                            label="Số phiếu"
+                            component={TextField}
+                            disabled="true"
+                          />
+                        </Col>
+                        <Col xl={6}>
+                          <Field
+                            name="diagnosisType"
+                            label="Kiểu khám"
+                            component={TextField}
+                          />
+                        </Col>
+                        <Col xl={6}>
+                          <Field
+                            name="clinicId"
+                            label="Phòng"
+                            component={TextField}
+                          />
+                        </Col>
+                      </Row>
+                    </div>
+                    {/* thông tin chuyển tuyến */}
+                    <div className="block shadow-fb">
+                      <div className="category-title">
+                        Thông tin chuyển tuyến
+                      </div>
+                      <Row>
+                        <Col xl={12}>
+                          <FastField
+                            name="preHospital"
+                            label="Bệnh viện"
+                            component={TextField}
+                          />
+                        </Col>
+                        <Col xl={12}>
+                          <FastField
+                            name="disease"
+                            label="Bệnh"
+                            component={TextField}
+                          />
+                        </Col>
+                      </Row>
+                    </div>
+                    <button type="button" >
+                      check values
+                    </button>
+                  </Form>
+                );
+              }}
+            </Formik>
           </div>
         </Col>
 
