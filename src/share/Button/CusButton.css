@@ -1,0 +1,9 @@
+.cus-button{
+    width: 100%;
+    padding: 5px;
+    border-radius: 8px;
+    border-color: #e7e7e7;
+}
+.cus-button:hover{
+    background-color: #e7e7e7;
+}

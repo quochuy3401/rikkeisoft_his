@@ -1,0 +1,59 @@
+.input-wrapper {
+    margin-bottom: 5px;
+}
+
+.input-wrapper >div:last-child {
+    width: 100%;
+    font-size: 16px;
+}
+
+.input-wrapper input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #d3d3d3;
+    width: 100%;
+    padding: 0px 5px;
+    line-height: 24px;
+    border-radius: 4px;
+}
+
+.input-wrapper input[type="text"]:disabled {
+    background-color: #f2f2f2;
+}
+
+.input-wrapper label {
+    width: 110px;
+}
+
+.input-wrapper .field-error {
+    border-bottom: 1px solid #D8000C !important;
+}
+
+.input-field{
+    position: relative;
+}
+.input-field .error-msg{
+    position: absolute;
+    display: none;
+    background-color: red;     
+    width: fit-content;    
+
+    top: 40px; 
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    z-index: 999999;
+}
+.input-field .error-msg:before{
+    position: absolute;
+    content: '';
+    border-width: 10px;
+    border-style: solid;
+    border-color: rgba(255,255,255,0) rgba(255,255,255,0) red rgba(255,255,255,0);
+    top: -20px; 
+    /* left: 90px;     */
+}
+
+.input-field .trigger:hover +.error-msg{
+    display: block;
+}
