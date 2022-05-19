@@ -5,8 +5,7 @@ import './App.css';
 import Login from './components/Login/Login'
 import { PatientForm } from './components/Patient/PatientForm';
 import Dashboard from './components/Dashboard/Dashboard';
-import LoadingScreen from './components/LoadingScreen/LoadingScreen';
-import SimpleLoading from './components/SimpleLoading/SimpleLoading';
+import PatientList from './components/PatientList/PatientList';
 
 function App() {
   return (
@@ -15,9 +14,10 @@ function App() {
       <Login /> */}
       <Routes>
         <Route path="/login" element={ <Login />}/>
-        <Route path="/" element={<Dashboard />}> 
-          <Route index element={<PatientForm />}/>
+        <Route path="/" element={ <Dashboard /> }> 
+          <Route index element={ <PatientForm /> }/>
         </Route>
+        <Route path="/patientList" element={ <PatientList/> }/>
       </Routes>
       
     </div>
