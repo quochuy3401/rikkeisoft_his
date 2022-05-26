@@ -48,8 +48,11 @@
 
 }
 
-.button-group button:hover {}
+/* .button-group button:hover {} */
 
 .patient-form input:disabled{
     background-color: #f2f2f2;
 }
+
+
+
