@@ -15,6 +15,7 @@ import {
 } from "../../formControl/patientFormOption";
 import { useEffect, useRef, useState } from "react";
 import { CusButton } from "../../share/Button/CusButton";
+import { ClinicInfo } from "../ClinicInfo/ClinicInfo";
 import RightClickMenu from "../RightClickMenu/RightClickMenu";
 
 export const PatientForm = () => {
@@ -325,6 +326,7 @@ export const PatientForm = () => {
                     <div className="category-title">
                       Thông tin các phòng khám
                     </div>
+                    <ClinicInfo/>
                   </div>
                 </Col>
               </Row>
@@ -340,7 +342,7 @@ export const PatientForm = () => {
                         <label>Lần khám trong tuần</label>
                       </div>
                       <div>
-                        <input type="text" />
+                        <input type="text" disabled/>
                       </div>
                     </div>
                     <div className="d-flex justify-content-between">
@@ -348,7 +350,7 @@ export const PatientForm = () => {
                         <label>Lần khám trong tháng</label>
                       </div>
                       <div>
-                        <input type="text" />
+                        <input type="text" disabled/>
                       </div>
                     </div>
                     <div className="d-flex justify-content-between">

@@ -1,15 +1,16 @@
 import './PatientList.css'
-import React from 'react'
 import MOCK_DATA from './MOCK_DATA.json'
 import { useState } from 'react'
 
 
 export default function PatientList() {
     const searchObjects = ["file_number", "full_name", 'address', 'patient_type']
-    const [contacts, setContacts] = useState(MOCK_DATA)
     const [searchColumns, setSearchColumns] = useState(searchObjects)
     const [q, setQ] = useState('')
 
+    const items = MOCK_DATA
+   
+    
     function search(rows) {
         return rows.filter((row) =>
             searchColumns.some(
@@ -35,34 +36,42 @@ export default function PatientList() {
                         </label>)
                 }
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Số hồ sơ</th>
-                        <th>Tên bệnh nhân</th>
-                        <th>Tuổi</th>
-                        <th>Giới tính</th>
-                        <th>Địa chỉ</th>
-                        <th>Ngày khám</th>
-                        <th>Trạng thái hồ sơ</th>
-                        <th>Đối tượng</th>
-                    </tr>
-                </thead>
-                <tbody className="table-patient">
-                    {search(contacts).map((contact) => (
-                        <tr key={contact.file_number}>
-                            <td>{contact.file_number}</td>
-                            <td>{contact.full_name}</td>
-                            <td>{contact.age}</td>
-                            <td>{contact.gender}</td>
-                            <td>{contact.address}</td>
-                            <td>{contact.examine_date}</td>
-                            <td><input type="checkbox" checked={contact.file_status ? 'checked' : ''} onChange={e => { }} /></td>
-                            <td>{contact.patient_type}</td>
+
+            <div className='table-wrapper'>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Số hồ sơ</th>
+                            <th>Tên bệnh nhân</th>
+                            <th>Tuổi</th>
+                            <th>Giới tính</th>
+                            <th>Địa chỉ</th>
+                            <th>Ngày khám</th>
+                            <th>Trạng thái hồ sơ</th>
+                            <th>Đối tượng</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody className="table-patient" >
+                        {items.length > 0 ? (search(items).map((item) => (
+                            <tr key={item.file_number}>
+                                <td>{item.file_number}</td>
+                                <td>{item.full_name}</td>
+                                <td>{item.age}</td>
+                                <td>{item.gender}</td>
+                                <td>{item.address}</td>
+                                <td>{item.examine_date}</td>
+                                <td><input type="checkbox" checked={item.file_status ? 'checked' : ''} onChange={e => {}}/></td>
+                                <td>{item.patient_type}</td>
+                            </tr>
+                        )) ) : (
+                            <div>
+                                No data available
+                            </div>
+                        )}
+                    </tbody>
+                </table>
+                    
+            </div>
         </div>
     )
 }
