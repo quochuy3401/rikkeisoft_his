@@ -1,41 +1,71 @@
 import './PatientList.css'
 import MOCK_DATA from './MOCK_DATA.json'
-import { useState } from 'react'
+import { useFormik } from 'formik'
 
+const initialValues = {
+    name: '',
+    room: '',
+    fromDate: '',
+    toDate: ''
+}
+
+const onSubmit = values => {
+    console.log('Form data', values)
+}
 
 export default function PatientList() {
-    const searchObjects = ["file_number", "full_name", 'address', 'patient_type']
-    const [searchColumns, setSearchColumns] = useState(searchObjects)
-    const [q, setQ] = useState('')
-
     const items = MOCK_DATA
-   
-    
-    function search(rows) {
-        return rows.filter((row) =>
-            searchColumns.some(
-                (searchColumn) => row[searchColumn].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
-            )
-        )
-    }
-   
+
+    const formik = useFormik({
+        initialValues, 
+        onSubmit,
+    })
+
     return (
         <div className='container-fluid patient-table-container'>
-            <div className='filter'>
-                <input type="text" value={q} onChange={e => setQ(e.target.value)} placeholder='Search...' />
-                {
-                    searchObjects.map((column) => 
-                    <label>
-                        <input type="checkbox" checked={searchColumns.includes(column)} 
-                            onChange={(e) => {
-                                const checked = searchColumns.includes(column)
-                                setSearchColumns(prev => checked ? prev.filter(sc => sc !== column) : [...prev, column])
-                            }}
-                        />
-                        {column}
-                    </label>)
-                }
-            </div>
+            <form className='filter' onSubmit={formik.handleSubmit}>
+                <div className='search-by-name search-params'>
+                    <label>Tên bệnh nhân</label>
+                    <input 
+                        type="text"
+                        name='name'
+                        onChange={formik.handleChange}
+                        value={formik.values.name}
+                    />
+                </div>
+                
+                <div className='search-by-room search-params'>
+                    <label>Phòng khám</label>
+                    <input 
+                        type="text"
+                        name='room'
+                        onChange={formik.handleChange}
+                        value={formik.values.room}
+                    />
+                </div>
+
+                <div className='search-by-day search-params' style={{display: 'flex'}}>
+                    <label style={{display: 'inline'}}>Từ ngày</label>
+                    <input 
+                        type="date"
+                        name='fromDate'
+                        onChange={formik.handleChange}
+                        value={formik.values.fromDate}
+                    />
+                </div>
+
+                <div className='search-by-day search-params' style={{display: 'flex'}}>
+                    <label style={{display: 'inline'}}>Đến ngày</label>
+                    <input 
+                        type="date" 
+                        onChange={formik.handleChange}
+                        name='toDate'
+                        value={formik.values.toDate}
+                    />
+                </div>
+
+                <button className='search-submit' type='submit'>Nhập</button>
+            </form>
 
             <div className='table-wrapper'>
                 <table>
@@ -52,7 +82,7 @@ export default function PatientList() {
                         </tr>
                     </thead>
                     <tbody className="table-patient" >
-                        {items.length > 0 ? (search(items).map((item) => (
+                        {items.length > 0 ? (items.map((item) => (
                             <tr key={item.file_number}>
                                 <td>{item.file_number}</td>
                                 <td>{item.full_name}</td>
