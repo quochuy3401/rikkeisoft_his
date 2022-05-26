@@ -32,7 +32,6 @@
 
 .account-icon {
   font-size: 30px !important;
-
 }
 
 .name-hospital h1{
@@ -61,16 +60,18 @@
 
 .nav-button{
   padding: 0 0 0 0 !important;
+
 }
-.nav-icon {
+.nav-icon:first-child{
   font-size: 30px !important;
   padding-left: 10px;
+  padding-bottom: 2px;
   color: #000;
 }
 
-.nav-text{
-  font-size: 12px;
+.nav-text span {
   color:#000;
+  font-size: 18px;
 }
 
 .menu-checkbox:checked ~ .navbar{
