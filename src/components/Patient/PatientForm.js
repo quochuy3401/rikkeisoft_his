@@ -15,6 +15,7 @@ import {
 } from "../../formControl/patientFormOption";
 import { useEffect, useRef, useState } from "react";
 import { CusButton } from "../../share/Button/CusButton";
+import RightClickMenu from "../RightClickMenu/RightClickMenu";
 
 export const PatientForm = () => {
   const formikRef = useRef();
@@ -69,6 +70,7 @@ export const PatientForm = () => {
 
   return (
     <Container fluid>
+      
       <Formik
         innerRef={formikRef}
         initialValues={initialValues}
@@ -96,10 +98,15 @@ export const PatientForm = () => {
 
           return (
             <Form className="patient-form">
-              <Row style={{ marginTop: "70px" }}>
+              {/* <div class="container-tab">
+                <button type="button" class="btn-tab btn-welcome">Tiếp nhận bệnh nhân</button>
+                <button type="button" class="btn-tab btn-list">Danh sách bệnh nhân</button>
+              </div> */}
+              <Row style={{ marginTop: "0px" }}>
                 {/* left-side */}
                 <Col xl={8}>
                   <div className="left-side">
+                  {/* <RightClickMenu/> */}
                     {/* hồ  sơ*/}
                     <div className="block shadow-fb">
                       <div className="category-title">Hồ sơ</div>

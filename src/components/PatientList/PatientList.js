@@ -19,7 +19,7 @@ export default function PatientList() {
     }
    
     return (
-        <div className='container patient-table-container'>
+        <div className='container-fluid patient-table-container'>
             <div className='filter'>
                 <input type="text" value={q} onChange={e => setQ(e.target.value)} placeholder='Search...' />
                 {
@@ -48,7 +48,7 @@ export default function PatientList() {
                     <th>Đối tượng</th>
                 </tr>
                </thead>
-               <tbody>
+               <tbody className="table-patient">
                 {search(contacts).map((contact) => (
                     <tr key={contact.file_number}>
                         <td>{contact.file_number}</td>
