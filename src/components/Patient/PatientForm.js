@@ -15,6 +15,7 @@ import {
 } from "../../formControl/patientFormOption";
 import { useEffect, useRef, useState } from "react";
 import { CusButton } from "../../share/Button/CusButton";
+import { ClinicInfo } from "../ClinicInfo/ClinicInfo";
 
 export const PatientForm = () => {
   const formikRef = useRef();
@@ -96,7 +97,7 @@ export const PatientForm = () => {
 
           return (
             <Form className="patient-form">
-              <Row style={{ marginTop: "70px" }}>
+              <Row>
                 {/* left-side */}
                 <Col xl={8}>
                   <div className="left-side">
@@ -318,6 +319,7 @@ export const PatientForm = () => {
                     <div className="category-title">
                       Thông tin các phòng khám
                     </div>
+                    <ClinicInfo/>
                   </div>
                 </Col>
               </Row>
@@ -333,7 +335,7 @@ export const PatientForm = () => {
                         <label>Lần khám trong tuần</label>
                       </div>
                       <div>
-                        <input type="text" />
+                        <input type="text" disabled/>
                       </div>
                     </div>
                     <div className="d-flex justify-content-between">
@@ -341,7 +343,7 @@ export const PatientForm = () => {
                         <label>Lần khám trong tháng</label>
                       </div>
                       <div>
-                        <input type="text" />
+                        <input type="text" disabled/>
                       </div>
                     </div>
                     <div className="d-flex justify-content-between">

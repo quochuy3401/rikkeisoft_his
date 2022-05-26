@@ -15,9 +15,9 @@
     width: 110px;
 }
 
-.select-wrapper .field-error>div:last-child {
+/* .select-wrapper .field-error>div:last-child {
     border-bottom: 1px solid #D8000C !important;
-}
+} */
 
 .select-wrapper .select-input>div {
     border-style: none;
@@ -28,6 +28,10 @@
 
 .select-wrapper .select-input {
     width: 100%;
+}
+
+.field-error>div{
+    border-bottom: 1px solid #D8000C !important;
 }
 
 .select-field{

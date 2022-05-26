@@ -1,0 +1,26 @@
+.clinic-info table {
+    width: 100%;
+}
+
+.clinic-info table,
+.clinic-info td,
+.clinic-info th {
+    border: 1px solid grey;
+    padding: 5px;
+}
+
+.clinic-info th:first-of-type {
+    border-top-left-radius: 10px;
+}
+
+.clinic-info th:last-of-type {
+    border-top-right-radius: 10px;
+}
+
+.clinic-info tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 10px;
+}
+
+.clinic-info tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 10px;
+}
