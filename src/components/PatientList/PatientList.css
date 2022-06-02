@@ -28,12 +28,32 @@ td {
   background-color: rgb(205, 235, 253);
 }
 
-.filter label {
-  margin-left: 40px;
-}
-
 .table-wrapper {
   overflow:hidden;
   overflow-y: scroll;
   height: 700px;
+}
+
+.filter {
+  display: flex;
+}
+
+.search-params {
+  margin-right: 40px;
+}
+
+.search-params label {
+  margin-right: 6px;
+}
+
+.search-params select {
+  height: 100%;
+}
+
+.search-by-day label{
+  margin-top: 2px;
+}
+
+.search-submit {
+  margin-right: -40px;
 }
