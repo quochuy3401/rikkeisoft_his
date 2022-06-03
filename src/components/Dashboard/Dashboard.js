@@ -6,9 +6,15 @@ import AddToQueueIcon from '@mui/icons-material/AddToQueue';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import { ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import { Outlet } from "react-router-dom";
+import { useState } from "react";
 
 export default function Dashboard(){
-  
+  const [isOpen, setIsOpen] = useState(false)
+  function toggleDdMenu() {
+    console.log("test logout")
+    setIsOpen(!isOpen)
+  }
+
   return (
     <div className="dashboard">
       <div className="header">
@@ -21,9 +27,13 @@ export default function Dashboard(){
           <h1>Hospital</h1>
         </div> */}
         
-        <div className="account-container">
+        <div className="account-container" onClick={toggleDdMenu}>
           <AccountCircleIcon className="account-icon"/>
+          <div className="dd-menu" style={{display: isOpen ? 'block' : 'none'}}>
+            <div className="logout-btn">Đăng xuất</div>
+          </div>
         </div>
+
       </div>
       <input className="menu-checkbox" type="checkbox" id="navbar" >
       </input>

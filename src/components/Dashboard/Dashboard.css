@@ -22,12 +22,14 @@
 
 
 .account-container{
+  position: relative;
   display: flex;
   flex-grow: 1;
   float: inline-end;
   align-items: center;
   justify-content: flex-end;
   padding-right: 30px;
+  cursor: pointer;
 }
 
 .account-icon {
@@ -91,4 +93,20 @@
 
 .menu-checkbox:checked ~ .nav-overlay {
   display: block;
+}
+
+
+.dd-menu {
+    display: none;
+    position: absolute;
+    margin-top: 60px;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.logout-btn {
+  margin-left: 4px;
+  cursor: pointer;
 }

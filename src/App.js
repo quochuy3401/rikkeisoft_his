@@ -5,6 +5,7 @@ import Login from './components/Login/Login'
 import Dashboard from './components/Dashboard/Dashboard';
 import PatientList from './components/PatientList/PatientList';
 import { TabButton } from './components/TabButton/TabButton';
+import QueueCard from './components/QueueCard/QueueCard';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route index element={ <TabButton /> }/>
         </Route>
         <Route path="/patientList" element={ <PatientList/> }/>
+        <Route path="/queueCard" element={ <QueueCard/> }/>
       </Routes>
     </div>
   );

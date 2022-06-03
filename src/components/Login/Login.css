@@ -70,7 +70,7 @@ img{
     opacity: .5;
 }
 
-h1{
+.login-wrapper h1{
     font-family: 'Encode Sans Condensed', sans-serif;
     position: relative;
     margin-top: 0px;

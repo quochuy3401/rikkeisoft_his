@@ -1,6 +1,7 @@
 import { Formik, Form, Field } from "formik";
 import { Col, Container, Row } from "react-bootstrap";
 import { TextField } from "../../share/TextField/TextField";
+import { useNavigate } from "react-router-dom";
 import "./PatientForm.css";
 import {
   initialValues,
@@ -23,6 +24,7 @@ export const PatientForm = () => {
   const [disableFields, setDisableFields] = useState([""]);
   const [disableButtons, setDisableButtons] = useState([""]);
   const [action, setAction] = useState("SEARCH");
+  const navigate = useNavigate()
 
   const changeMode = (action) => {
     const mode = listMode.find((mode) => mode.action === action);
@@ -47,6 +49,7 @@ export const PatientForm = () => {
         break;
       case "PRINT":
         console.log(formikRef.current?.values);
+        navigate('/queueCard');
         break;
       case "SUBMIT":
         console.log("doi api submit");
